@@ -4,14 +4,14 @@
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.11.1</Version>
-  <Author>Presenter</Author>
+  <Author>Terry Doner</Author>
  </Creator>
  <Engine>
   <InputOutputMap>
    <Universe Name="Not Used1" ID="0"/>
    <Universe Name="Not Used2" ID="1"/>
    <Universe Name="OSC" ID="2">
-    <Output Plugin="OSC" Line="1"/>
+    <Output Plugin="OSC" Line="0"/>
    </Universe>
   </InputOutputMap>
   <Fixture>
@@ -1542,7 +1542,7 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Manual-PP: Start Mediashout Loop" ID="75" Page="1" Icon="">
+    <Button Caption="Manual-PP: Start CDWU-0009 Loop" ID="75" Page="1" Icon="">
      <WindowState Visible="True" X="5" Y="130" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
@@ -1568,7 +1568,7 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Lobby-Nursery   from Aux" ID="77" Page="1" Icon="">
+    <Button Caption="Lobby-Nursery from Aux" ID="77" Page="1" Icon="">
      <WindowState Visible="True" X="5" Y="225" Width="250" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
@@ -2023,7 +2023,7 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Label Caption="Note: at 9:55 the centre screen was switched to run from Aux. Now we switch the Aux to be Mediashout. This allows the centre screen to display the series graphic independent from PP." ID="119" Page="5">
+    <Label Caption="Note: at 9:55 the centre screen was switched to run from Aux. Now we switch the Aux to be CDWU-0009. This allows the centre screen to display the series graphic independent from PP." ID="119" Page="5">
      <WindowState Visible="False" X="5" Y="290" Width="250" Height="180"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
@@ -2043,6 +2043,19 @@
       <Font>Default</Font>
      </Appearance>
      <Function ID="35"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="Manual-Video: Start Livestream" ID="5" Page="1" Icon="">
+     <WindowState Visible="True" X="5" Y="325" Width="250" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>4284479739</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="4294967295"/>
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
