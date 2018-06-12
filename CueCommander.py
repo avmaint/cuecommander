@@ -7,8 +7,8 @@ This version uses QLC+ as the UI which generates OSC events for action.
 __author__ = "Terry Doner"
 __copyright__ = "Copyright 2018, Terry Doner"
 __credits__ = ["Terry Doner"]
-__license__ = "GPL 2"
-__version__ = "0.2"
+__license__ = "GPL 3"
+__version__ = "0.3"
 
 import sys
 import time
@@ -127,6 +127,18 @@ osc_map = {
     52: oc_actions.obs_announce_clock,
     53: oc_actions.obs_prop_lyrics,
     54: oc_actions.obs_series_graphic,
+
+    61: bm_actions.macro01,
+    62: bm_actions.macro02,
+    63: bm_actions.macro03,
+    64: bm_actions.macro04,
+    65: bm_actions.macro05,
+    66: bm_actions.macro06,
+    67: bm_actions.macro07,
+    68: bm_actions.macro08,
+    69: bm_actions.macro09,
+    70: bm_actions.macro10,
+
 }
 
 def main():
