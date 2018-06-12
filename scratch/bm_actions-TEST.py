@@ -6,7 +6,8 @@ atem_cmds = {
     'aux_source_pp'     : "/atem/aux/1 1",
     'aux_source_vmac'   : "/atem/aux/1 2",
     'aux_source_ms'     : "/atem/aux/1 3",
-    'aux_source_prog'   : "/atem/aux/1 9"   #not sure of the correct number for the Program.
+    'aux_source_prog'   : "/atem/aux/1 9",
+    'macro01'           : "/2/dmx/61"
 }
 
 ip =    config.parms["atemOsc_ip"]
@@ -62,4 +63,8 @@ def aux_source_prog(action, value):
     """ """
     return (action_util(action, atem_cmds['aux_source_prog']))
 
-aux_source_prog(True, [1.0])
+def macro01(action, value):
+    """ """
+    return (action_util(action, atem_cmds['macro01']))
+
+macro01(True, [1.0])
