@@ -8,7 +8,7 @@ atem_cmds = {
     'aux_source_vmac': "/atem/aux/1",
     'aux_source_ms': "/atem/aux/1",
     'aux_source_prog': "/atem/aux/1",  # todo  verify correct number for the Program.
-    'macro': "/atem/macro/"  # todo verify macro syntax.
+    'macro': lambda x: "atem/macros/" + str(x) + "/run"   # macro syntax /atem/macros/$i/run.
 }
 
 ip = config.parms["atemOsc_ip"]
@@ -68,49 +68,51 @@ def aux_source_prog(action, value):
 
 def macro01(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 1))
+
+    print(atem_cmds['macro'](1))
+    return (action_util(action, atem_cmds['macro'](1), 1))
 
 
-def macro02(action, value):
+def macro02(actixon, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 2))
+    return (action_util(action, atem_cmds['macro'](2), 2))
 
 
 def macro03(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 3))
+    return (action_util(action, atem_cmds['macro'](3), 3))
 
 
 def macro04(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 4))
+    return (action_util(action, atem_cmds['macro'](4), 4))
 
 
 def macro05(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 5))
+    return (action_util(action, atem_cmds['macro'](5), 5))
 
 
 def macro06(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 6))
+    return (action_util(action, atem_cmds['macro'](6), 6))
 
 
 def macro07(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 7))
+    return (action_util(action, atem_cmds['macro'](7), 7))
 
 
 def macro08(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 8))
+    return (action_util(action, atem_cmds['macro'](8), 8))
 
 
 def macro09(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 9))
+    return (action_util(action, atem_cmds['macro'](9), 9))
 
 
 def macro10(action, value):
     """ """
-    return (action_util(action, atem_cmds['macro'], 10))
+    return (action_util(action, atem_cmds['macro'](10), 10))
