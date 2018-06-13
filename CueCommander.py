@@ -186,7 +186,7 @@ main()
 
 # What I know about midi messages.
 #       midi_status:  use p1=144 of my laptop and p1=176 for CDWU-0009
-# todo need to figure out where QLC specs 144 or 176
+#todo need to figure out where QLC specs 144 or 176
 #       we want to use the input "IAC Driver Bus 1"
 #       we only handle "note velocity" events
 #       midi status identifies between "Note Velocity", "Control Change' and 'Program Change'
