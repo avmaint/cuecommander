@@ -69,7 +69,8 @@ def aux_source_prog(action, value):
 def macro(num, action, value):
     """ """
 
-    print("num=", num)
+    print("%-16s %-20s       %-10s    func: %-30s  macro: %d" %
+          ("",   "", "", "macro", num )
+          )
 
-    print(atem_cmds['macro'](num))
     return (action_util(action, atem_cmds['macro'](num), 1))
