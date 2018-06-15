@@ -24,6 +24,9 @@ from MatrixControl          import mc_actions
 from BmdControl             import bm_actions # BlackMagic ATEM Controls
 from OBSControl             import oc_actions # Open Broadcast Software
 
+#from functools import partial
+
+
 # Functions
 currentFuncName = lambda n=0: sys._getframe(n + 1).f_code.co_name
 
@@ -38,6 +41,9 @@ def ts():
     se = str(t.tm_sec).zfill(2)
     stamp = yyyy + mm + dd + "_" + hh + mi + se
     return(stamp)
+
+def printf(format, *values):
+    print(format % values)
 
 # Globals
 finished = False
@@ -128,16 +134,19 @@ osc_map = {
     53: oc_actions.obs_prop_lyrics,
     54: oc_actions.obs_series_graphic,
 
-    61: bm_actions.macro01,
-    62: bm_actions.macro02,
-    63: bm_actions.macro03,
-    64: bm_actions.macro04,
-    65: bm_actions.macro05,
-    66: bm_actions.macro06,
-    67: bm_actions.macro07,
-    68: bm_actions.macro08,
-    69: bm_actions.macro09,
-    70: bm_actions.macro10,
+    #61: bm_actions.macro01,
+    61: lambda  x, y : bm_actions.macro(1, x, y),
+    #61: partial(  bm_actions.macro, num=1 ),
+
+    62: lambda  x, y : bm_actions.macro(2, x, y),
+    63: lambda  x, y : bm_actions.macro(3, x, y),
+    64: lambda  x, y : bm_actions.macro(4, x, y),
+    65: lambda  x, y : bm_actions.macro(5, x, y),
+    66: lambda  x, y : bm_actions.macro(6, x, y),
+    67: lambda  x, y : bm_actions.macro(7, x, y),
+    68: lambda  x, y : bm_actions.macro(8, x, y),
+    69: lambda  x, y : bm_actions.macro(9, x, y),
+    70: lambda  x, y : bm_actions.macro(10, x, y),
 
 }
 
@@ -155,15 +164,18 @@ def main():
 
     osc_udp_server(config.parms["osc_ip"], config.parms["osc_port"], config.parms["osc_sname"])
 
-    print("\tOSC Addr\tAction")
+    print("%-12s %-20s" % (  "OSC Addr", "Action" ) )
 
     for k in osc_map.keys():
         addr = "/" + str(config.parms["qlc_universe"]) + "/dmx/" + str(k)
         func = osc_map[ k ]
-        print(addr, func.__name__, sep='\t') #TODO remove after core engine is working
+        print("%-12s %-20s" % (addr, func.__name__ )) #TODO remove after core engine is working
 
     osc_method("/2/dmx/*",  osc_event_handler , argscheme=osm.OSCARG_MESSAGEUNPACK)
+
     #this method for /atem is for local unit testing
+    #/atem messages are supposed to be received by atemOSC
+    #todo - write a stub for atemOSC for unit testing. and remove this line. And simplify Config.
     osc_method("/atem/*",  osc_event_handler , argscheme=osm.OSCARG_MESSAGEUNPACK)
 
     # Periodically call osc4py3 processing method in your event loop.
