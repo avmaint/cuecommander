@@ -619,9 +619,9 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>144</ID>
-   <Name>osc# #41</Name>
+   <Name>bmd macro #10</Name>
    <Universe>2</Universe>
-   <Address>60</Address>
+   <Address>70</Address>
    <Channels>1</Channels>
   </Fixture>
   <Fixture>
@@ -629,7 +629,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>145</ID>
-   <Name>osc# #42</Name>
+   <Name>bmd macro #01</Name>
    <Universe>2</Universe>
    <Address>61</Address>
    <Channels>1</Channels>
@@ -639,7 +639,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>146</ID>
-   <Name>osc# #43</Name>
+   <Name>bmd macro #02</Name>
    <Universe>2</Universe>
    <Address>62</Address>
    <Channels>1</Channels>
@@ -649,7 +649,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>147</ID>
-   <Name>osc# #44</Name>
+   <Name>bmd macro #03</Name>
    <Universe>2</Universe>
    <Address>63</Address>
    <Channels>1</Channels>
@@ -659,7 +659,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>148</ID>
-   <Name>osc# #45</Name>
+   <Name>bmd macro #04</Name>
    <Universe>2</Universe>
    <Address>64</Address>
    <Channels>1</Channels>
@@ -669,7 +669,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>149</ID>
-   <Name>osc# #46</Name>
+   <Name>bmd macro #05</Name>
    <Universe>2</Universe>
    <Address>65</Address>
    <Channels>1</Channels>
@@ -679,7 +679,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>150</ID>
-   <Name>osc# #47</Name>
+   <Name>bmd macro #06</Name>
    <Universe>2</Universe>
    <Address>66</Address>
    <Channels>1</Channels>
@@ -689,7 +689,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>151</ID>
-   <Name>osc# #48</Name>
+   <Name>bmd macro #07</Name>
    <Universe>2</Universe>
    <Address>67</Address>
    <Channels>1</Channels>
@@ -699,7 +699,7 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>152</ID>
-   <Name>osc# #49</Name>
+   <Name>bmd macro #08</Name>
    <Universe>2</Universe>
    <Address>68</Address>
    <Channels>1</Channels>
@@ -709,20 +709,20 @@
    <Model>Generic</Model>
    <Mode>1 Channel</Mode>
    <ID>153</ID>
-   <Name>osc# #50</Name>
+   <Name>bmd macro #09</Name>
    <Universe>2</Universe>
    <Address>69</Address>
    <Channels>1</Channels>
   </Fixture>
-  <Function ID="0" Type="Scene" Name="osc 40 /60" Path="test macros">
+  <Function ID="0" Type="Scene" Name="macro 03 /60" Path="test macros">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
-   <FixtureVal ID="143">0,255</FixtureVal>
+   <FixtureVal ID="146">0,255</FixtureVal>
   </Function>
-  <Function ID="1" Type="Scene" Name="osc 41 / 61" Path="test macros">
+  <Function ID="1" Type="Scene" Name="macro 01 / 61" Path="test macros">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="144">0,255</FixtureVal>
   </Function>
-  <Function ID="2" Type="Scene" Name="osc 42 / 61" Path="test macros">
+  <Function ID="2" Type="Scene" Name="macro 02 / 61" Path="test macros">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="145">0,255</FixtureVal>
   </Function>
@@ -2233,7 +2233,7 @@
      <Font>MS Shell Dlg 2,34,-1,5,50,0,0,0,0,0</Font>
     </Appearance>
    </Label>
-   <Frame Caption="" ID="26">
+   <Frame Caption="" ID="37">
     <Appearance>
      <FrameStyle>Sunken</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -2241,15 +2241,15 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="510" Y="130" Width="120" Height="70"/>
+    <WindowState Visible="True" X="530" Y="180" Width="230" Height="90"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
     <ShowEnableButton>True</ShowEnableButton>
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
-    <Button Caption="osc 40 /60" ID="27" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="50" Height="50"/>
+    <Button Caption="macro 01 / 61" ID="59" Icon="">
+     <WindowState Visible="True" X="10" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -2257,12 +2257,12 @@
       <BackgroundImage>None</BackgroundImage>
       <Font>Default</Font>
      </Appearance>
-     <Function ID="0"/>
+     <Function ID="1"/>
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="osc 41 / 61" ID="33" Icon="">
-     <WindowState Visible="True" X="60" Y="10" Width="50" Height="50"/>
+    <Button Caption="macro 02 / 61" ID="60" Icon="">
+     <WindowState Visible="True" X="80" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -2271,6 +2271,19 @@
       <Font>Default</Font>
      </Appearance>
      <Function ID="2"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="macro 03 /60" ID="61" Icon="">
+     <WindowState Visible="True" X="150" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="0"/>
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
