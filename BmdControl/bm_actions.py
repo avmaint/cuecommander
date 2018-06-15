@@ -66,53 +66,10 @@ def aux_source_prog(action, value):
     return (action_util(action, atem_cmds['aux_source_prog'], 9))
 
 
-def macro01(action, value):
+def macro(num, action, value):
     """ """
 
-    print(atem_cmds['macro'](1))
-    return (action_util(action, atem_cmds['macro'](1), 1))
+    print("num=", num)
 
-
-def macro02(actixon, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](2), 2))
-
-
-def macro03(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](3), 3))
-
-
-def macro04(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](4), 4))
-
-
-def macro05(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](5), 5))
-
-
-def macro06(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](6), 6))
-
-
-def macro07(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](7), 7))
-
-
-def macro08(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](8), 8))
-
-
-def macro09(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](9), 9))
-
-
-def macro10(action, value):
-    """ """
-    return (action_util(action, atem_cmds['macro'](10), 10))
+    print(atem_cmds['macro'](num))
+    return (action_util(action, atem_cmds['macro'](num), 1))
