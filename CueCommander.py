@@ -155,7 +155,6 @@ def main():
     global finished
     print(ts(), "CueCommander Execution begins\n")
 
-    #TODO replace embedded parms with external config file. report on the config file used and optionally the contents.
     print(ts(), "parms=", config.parms)
 
     osc_startup()
@@ -169,7 +168,7 @@ def main():
     for k in osc_map.keys():
         addr = "/" + str(config.parms["qlc_universe"]) + "/dmx/" + str(k)
         func = osc_map[ k ]
-        print("%-12s %-20s" % (addr, func.__name__ )) #TODO remove after core engine is working
+        print("%-12s %-20s" % (addr, func.__name__ ))  
 
     osc_method("/2/dmx/*",  osc_event_handler , argscheme=osm.OSCARG_MESSAGEUNPACK)
 
