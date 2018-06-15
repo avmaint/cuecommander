@@ -2,7 +2,6 @@
 from pathlib          import Path
 import socket
 
-print("config exec")
 #todo move parms to external config file. Look at StageDisplay.py in the propresenter code as an example.
 # parms_1 = {
 #     "ip"    : "127.0.0.1",
