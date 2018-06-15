@@ -168,7 +168,7 @@ def main():
     for k in osc_map.keys():
         addr = "/" + str(config.parms["qlc_universe"]) + "/dmx/" + str(k)
         func = osc_map[ k ]
-        print("%-12s %-20s" % (addr, func.__name__ ))  
+        print("%-12s %-20s" % (addr, func.__name__ ))
 
     osc_method("/2/dmx/*",  osc_event_handler , argscheme=osm.OSCARG_MESSAGEUNPACK)
 
@@ -181,7 +181,7 @@ def main():
     finished = False
     while not finished:
         osc_process()
-        time.sleep(.25)
+        time.sleep(.1)
         # a good spot to put in a pause - (1/10th of a second) trade off between repsonse time and cpu burn.
 
     # Properly close the osc system.
