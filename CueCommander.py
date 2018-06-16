@@ -157,10 +157,16 @@ def main():
 
     print(ts(), "parms=", config.parms)
 
-    osc_startup()
+    # validate we have needed configuration values
+
+    assert "osc_ip"    in config.parms
+    assert "osc_port"  in config.parms
+    assert "osc_sname" in config.parms
+    assert "qlc_universe" in config.parms
 
     # Make server channels to receive packets.
 
+    osc_startup()
     osc_udp_server(config.parms["osc_ip"], config.parms["osc_port"], config.parms["osc_sname"])
 
     print("%-12s %-20s" % (  "OSC Addr", "Action" ) )
@@ -170,7 +176,7 @@ def main():
         func = osc_map[ k ]
         print("%-12s %-20s" % (addr, func.__name__ ))
 
-    osc_method("/2/dmx/*",  osc_event_handler , argscheme=osm.OSCARG_MESSAGEUNPACK)
+    osc_method("/2/dmx/*",  osc_event_handler, argscheme=osm.OSCARG_MESSAGEUNPACK)
 
     #this method for /atem is for local unit testing
     #/atem messages are supposed to be received by atemOSC
