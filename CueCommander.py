@@ -22,7 +22,9 @@ from AudioRecording         import ar_actions
 from ProjectorControl       import pc_actions
 from MatrixControl          import mc_actions
 from BmdControl             import bm_actions # BlackMagic ATEM Controls
-from OBSControl             import oc_actions # Open Broadcast Software
+from OBSControl             import oc_actions # Open Broadcast Softwarefrom OBSControl             import oc_actions # Open Broadcast Software
+from CSAVControl            import csav_actions
+
 
 #from functools import partial
 
@@ -147,6 +149,8 @@ osc_map = {
     68: lambda  x, y : bm_actions.macro(8, x, y),
     69: lambda  x, y : bm_actions.macro(9, x, y),
     70: lambda  x, y : bm_actions.macro(10, x, y),
+
+    80: lambda x,y   : csav_actions.playback(21,x,y)
 
 }
 
