@@ -9,5 +9,4 @@ set qxw=CueCommander.qxw
 
 start C:\QLC+\qlcplus.exe -o %qxw%  --operate --web
 
-py \Dropbox\UAC_Software\CueCommander\CueCommander.py
-
+py \Dropbox\UAC_Software\github\cuecommander\CueCommander.py
