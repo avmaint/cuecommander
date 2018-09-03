@@ -30,7 +30,7 @@ parms_all = {
         "obs_port"      : 5555,
         "csav_ip": "192.168.0.197",
         "csav_port": 8005,
-        "csav_cn"      "csav"
+        "csav_cn"   :   "csav"
     },
 
     # windows machine in the balcony
@@ -49,8 +49,7 @@ parms_all = {
         "obs_port"      : 5555,
         "csav_ip"      : "192.168.0.197",
         "csav_port"    : 8005,
-        "csav_cn"      "csav"
-
+        "csav_cn"   :   "csav"
     }
 }
 

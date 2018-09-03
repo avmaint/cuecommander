@@ -22,7 +22,7 @@ from AudioRecording         import ar_actions
 from ProjectorControl       import pc_actions
 from MatrixControl          import mc_actions
 from BmdControl             import bm_actions # BlackMagic ATEM Controls
-from OBSControl             import oc_actions # Open Broadcast Softwarefrom OBSControl             import oc_actions # Open Broadcast Software
+#from OBSControl             import oc_actions # Open Broadcast Softwarefrom OBSControl             import oc_actions # Open Broadcast Software
 from CSAVControl            import csav_actions
 
 
@@ -129,12 +129,12 @@ osc_map = {
     31: bm_actions.aux_source_vmac,
     32: bm_actions.aux_source_ms,
     33: bm_actions.aux_source_prog,
-
-    50: oc_actions.obs_black,
-    51: oc_actions.obs_announce_noclock,
-    52: oc_actions.obs_announce_clock,
-    53: oc_actions.obs_prop_lyrics,
-    54: oc_actions.obs_series_graphic,
+    #
+    # 50: oc_actions.obs_black,
+    # 51: oc_actions.obs_announce_noclock,
+    # 52: oc_actions.obs_announce_clock,
+    # 53: oc_actions.obs_prop_lyrics,
+    # 54: oc_actions.obs_series_graphic,
 
     #61: bm_actions.macro01,
     61: lambda  x, y : bm_actions.macro(1, x, y),
