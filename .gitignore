@@ -6,8 +6,11 @@
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+Config/__pycache__/**
 *.py[cod]
 *$py.class
+
+scratch/**
 
 #Other
 *.pyc
