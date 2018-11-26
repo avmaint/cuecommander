@@ -120,6 +120,8 @@ osc_map = {
     29:  mc_actions.kramer_status,
     25:  mc_actions.kramer_centrems,
     26:  mc_actions.kramer_LNms,
+    27:  mc_actions.kramer_AC_CDWU0009,
+    28:  mc_actions.kramer_AC_CDMUA001,
 
     10: pc_actions.projector_status,
     11: pc_actions.projector_on,

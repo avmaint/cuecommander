@@ -3,6 +3,8 @@ from pathlib          import Path
 import socket
 
 #todo move parms to external config file. Look at StageDisplay.py in the propresenter code as an example.
+#Also need to organize parameters according to the package that uses them.
+
 # parms_1 = {
 #     "ip"    : "127.0.0.1",
 #     "port"  : 9002 ,
@@ -66,6 +68,17 @@ prj_ip = {
 }
 #todo figure out why Hitachi is not responding
 
+# The camera settings are used by the VISCA Control package.
+
+camera_ip = {
+    "1" : "192.168.0.186",
+    "2" : "192.168.0.187",
+    "3" : "192.168.0.188"
+}
+
+camera_port = "52381" # UDP
+
+### end of VISCA settings.
 
 this_host = socket.gethostname()
 

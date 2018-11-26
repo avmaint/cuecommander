@@ -34,11 +34,13 @@ kramer_cmds = {
     'status'     : "#BUILD-DATE?|MODEL?|#VERSION?|#PROT-VER?\r\n",
     'centrePrg' : "#VID in>out|VID 6>2\r\n", # feed centre screen from VM Program
     'centreAux' : "#VID in>out|VID 7>2\r\n", # feed centre screen from VM Aux
-    'centreNorm': "#VID in>out||VID 1>1|VID 2>2|VID 3>3\r\n", # feed centre screen as normal
+    'centreNorm': "#VID in>out|VID 2>2\r\n", # feed centre screen as normal
     'LNvmAux'   : "#VID in>out||VID 7>7|VID 7>8\r\n",
     'LNvmPgm'   : "#VID in>out||VID 6>7|VID 6>8\r\n",
     'LNms'      : "#VID in>out||VID 5>7|VID 5>8\r\n", # nursery and lobby from mediashout
-    'centrems'  : "#VID in>out||VID 1>1|VID 5>2|VID 3>3\r\n",  # feed centre screen as normal
+    'centrems'  : "#VID in>out|VID 5>2\r\n",  # feed centre screen as normal
+    'AC_CDWU0009' : "#VID in>out||VID 5>1|VID 5>3\r\n",  # feed AC from Windows
+    'AC_CDMUA001' : "#VID in>out||VID 1>1|VID 3>3\r\n",  # feed AC from ProPresenter
 }
 
 
@@ -116,8 +118,16 @@ def kramer_centrePrg(action, value):
     return (action_util(action, kramer_cmds['centrePrg'] ))
 
 def kramer_centreAux(action, value):
-    """Sets cenrtre screen to ATEM Auxillary"""
+    """Sets centre screen to ATEM Auxillary"""
     return (action_util(action, kramer_cmds[ 'centreAux' ] ))
+
+def kramer_AC_CDWU0009(action, value):
+    """Sets AC screen to windows"""
+    return (action_util(action, kramer_cmds[ 'AC_CDWU0009' ] ))
+
+def kramer_AC_CDMUA001(action, value):
+    """Sets AC screen to Mac - PropPRESENTER"""
+    return (action_util(action, kramer_cmds[ 'AC_CDMUA001' ] ))
 
 def kramer_status(action, value):
     """query video matrix switch status"""
