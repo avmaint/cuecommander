@@ -39,8 +39,10 @@ kramer_cmds = {
     'LNvmPgm'   : "#VID in>out||VID 6>7|VID 6>8\r\n",
     'LNms'      : "#VID in>out||VID 5>7|VID 5>8\r\n", # nursery and lobby from mediashout
     'centrems'  : "#VID in>out|VID 5>2\r\n",  # feed centre screen as normal
-    'AC_CDWU0009' : "#VID in>out||VID 5>1|VID 5>3\r\n",  # feed AC from Windows
-    'AC_CDMUA001' : "#VID in>out||VID 1>1|VID 3>3\r\n",  # feed AC from ProPresenter
+    'AC_CDWU0009'   : "#VID in>out||VID 5>1|VID 5>3\r\n",  # feed AC from Windows
+    'AC_CDMUA001'   : "#VID in>out||VID 1>1|VID 3>3\r\n",  # feed AC from ProPresenter,
+    'rear_CDWU0009' : "#VID in>out||VID 5>4\r\n", # Windows output to rear
+    'rear_CDMUA001' : "#VID in>out||VID 4>4\r\n"   # normal PP stage display to rear
 }
 
 
@@ -79,7 +81,7 @@ def kramer_send_command(cmd ):
 
 
 def action_util(action, cmd):
-    """Executes template code for action execution. """
+    """Action execution. """
     if action:
         try:
             result =  kramer_send_command(cmd)
@@ -132,3 +134,15 @@ def kramer_AC_CDMUA001(action, value):
 def kramer_status(action, value):
     """query video matrix switch status"""
     return (action_util(action, kramer_cmds['status']  ))
+
+def kramer_rear_CDWU0009(action, value):
+    """Sets rear screen to Windows"""
+    return (action_util(action, kramer_cmds[ 'rear_CDWU0009' ] ))
+
+def kramer_rear_CDWU0009(action, value):
+    """Sets rear screen to PP Stage Display"""
+    return (action_util(action, kramer_cmds[ 'rear_CDMUA001' ] ))
+
+def kramer_generic_command(action, osc, commandstr, description):
+    """Invokes an action on the kramer matrix switch"""
+    return (action_util(action, commandstr ))

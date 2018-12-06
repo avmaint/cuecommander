@@ -105,6 +105,23 @@ def osc_event_handler(address, typetags, arguments):
 
     print("----")
 
+#TODO - apply DRY (don't repeat yourself...) Need to refactor this code
+# right now we have osc number mapped to function,
+# function name embdeds a name of the command
+# then we look up that name to get the command string.
+#
+# instead config structure should be a 4 value result:
+# - OSC # (key)
+# - function to invoke
+# - parameter to pass
+# - Description of what it does.
+# doing this would make the code more compact and easier to configure to different installations
+# Example:
+# 91 : kramer_generic_command, "#VID in>out||VID 4>4\r\n", "Normal - PP stage display to rear display"
+
+# this structure would be used to build the osc map.
+
+
 osc_map = {
      0:  end_program,
 
@@ -122,6 +139,8 @@ osc_map = {
     26:  mc_actions.kramer_LNms,
     27:  mc_actions.kramer_AC_CDWU0009,
     28:  mc_actions.kramer_AC_CDMUA001,
+    90:  mc_actions.kramer_rear_CDWU0009,
+    91:  mc_actions.kramer_rear_CDMUA001,
 
     10: pc_actions.projector_status,
     11: pc_actions.projector_on,
