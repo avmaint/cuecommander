@@ -31,7 +31,7 @@ kramer_cmds = {
     'model'     : "#MODEL?\r\n",
     'version'   : "#VERSION?\r\n",
     'protver'   : "#PROT-VER?\r\n",
-    'status'     : "#BUILD-DATE?|MODEL?|#VERSION?|#PROT-VER?\r\n",
+    'status'    : "#BUILD-DATE?|MODEL?|#VERSION?|#PROT-VER?\r\n",
     'centrePrg' : "#VID in>out|VID 6>2\r\n", # feed centre screen from VM Program
     'centreAux' : "#VID in>out|VID 7>2\r\n", # feed centre screen from VM Aux
     'centreNorm': "#VID in>out|VID 2>2\r\n", # feed centre screen as normal
@@ -139,10 +139,19 @@ def kramer_rear_CDWU0009(action, value):
     """Sets rear screen to Windows"""
     return (action_util(action, kramer_cmds[ 'rear_CDWU0009' ] ))
 
-def kramer_rear_CDWU0009(action, value):
+def kramer_rear_CDMUA001(action, value):
     """Sets rear screen to PP Stage Display"""
     return (action_util(action, kramer_cmds[ 'rear_CDMUA001' ] ))
+
+#todo decide on the generic command approach or the factoy approach
 
 def kramer_generic_command(action, osc, commandstr, description):
     """Invokes an action on the kramer matrix switch"""
     return (action_util(action, commandstr ))
+
+
+mc_func_template = """def kramer_%s(action, value): return(action_util(action, kramer_cmds[%s]))"""
+
+def mc_factory(osc,command_name,description):
+    exec(func_template %(command_name,command_name))
+    x=0/1

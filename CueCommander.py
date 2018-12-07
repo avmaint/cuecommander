@@ -120,6 +120,7 @@ def osc_event_handler(address, typetags, arguments):
 # 91 : kramer_generic_command, "#VID in>out||VID 4>4\r\n", "Normal - PP stage display to rear display"
 
 # this structure would be used to build the osc map.
+# need to think more about how to apply function templates
 
 
 osc_map = {
