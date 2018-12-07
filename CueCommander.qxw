@@ -4,16 +4,36 @@
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.11.1</Version>
-  <Author>Terry Doner</Author>
+  <Author>Presenter</Author>
  </Creator>
  <Engine>
   <InputOutputMap>
    <Universe Name="Not Used1" ID="0"/>
    <Universe Name="Not Used2" ID="1"/>
    <Universe Name="OSC" ID="2">
-    <Output Plugin="OSC" Line="0"/>
+    <Output Plugin="OSC" Line="1"/>
    </Universe>
   </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>1 Channel</Mode>
+   <ID>0</ID>
+   <Name>mc #30</Name>
+   <Universe>2</Universe>
+   <Address>90</Address>
+   <Channels>1</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic</Model>
+   <Mode>1 Channel</Mode>
+   <ID>1</ID>
+   <Name>mc #31</Name>
+   <Universe>2</Universe>
+   <Address>91</Address>
+   <Channels>1</Channels>
+  </Fixture>
   <Fixture>
    <Manufacturer>Generic</Manufacturer>
    <Model>Generic</Model>
@@ -714,6 +734,22 @@
    <Address>69</Address>
    <Channels>1</Channels>
   </Fixture>
+  <Function ID="0" Type="Scene" Name="MC #27 AC from CDWU-0009" Path="Matrix Control">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="111">0,255</FixtureVal>
+  </Function>
+  <Function ID="1" Type="Scene" Name="MC #28 AC from CDMU-A001" Path="Matrix Control">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="112">0,255</FixtureVal>
+  </Function>
+  <Function ID="2" Type="Scene" Name="MC #30 rear CDWU0009" Path="Matrix Control">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255</FixtureVal>
+  </Function>
+  <Function ID="3" Type="Scene" Name="MC #31 rear CDMUA001" Path="Matrix Control">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">0,255</FixtureVal>
+  </Function>
   <Function ID="15" Type="Scene" Name="PC #10 status" Path="Projector Control">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="25">0,255</FixtureVal>
@@ -918,7 +954,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="485" Y="305" Width="130" Height="105"/>
+    <WindowState Visible="True" X="600" Y="460" Width="200" Height="40"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
@@ -954,7 +990,7 @@
     </Button>
    </SoloFrame>
    <Button Caption="Stop Listener" ID="3" Icon="">
-    <WindowState Visible="True" X="765" Y="10" Width="70" Height="45"/>
+    <WindowState Visible="True" X="765" Y="5" Width="70" Height="45"/>
     <Appearance>
      <FrameStyle>Raised</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -974,12 +1010,12 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="650" Y="405" Width="150" Height="105"/>
+    <WindowState Visible="True" X="600" Y="500" Width="200" Height="40"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
     <ShowEnableButton>False</ShowEnableButton>
-    <Collapsed>False</Collapsed>
+    <Collapsed>True</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Process Files" ID="14" Icon="">
      <WindowState Visible="True" X="5" Y="40" Width="135" Height="60"/>
@@ -1003,7 +1039,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="485" Y="515" Width="315" Height="295"/>
+    <WindowState Visible="True" X="600" Y="420" Width="200" Height="40"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
@@ -1279,7 +1315,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="650" Y="305" Width="150" Height="95"/>
+    <WindowState Visible="True" X="480" Y="75" Width="150" Height="95"/>
     <AllowChildren>True</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
@@ -1314,7 +1350,7 @@
      <Intensity Adjust="False">100</Intensity>
     </Button>
    </SoloFrame>
-   <SoloFrame Caption="Matrix Centre Screen Src" ID="17">
+   <SoloFrame Caption="Matrix B Screen Source" ID="17">
     <Appearance>
      <FrameStyle>Sunken</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -1356,7 +1392,7 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Normal   PP" ID="23" Icon="">
+    <Button Caption="CDMU A001" ID="23" Icon="">
      <WindowState Visible="True" X="5" Y="40" Width="50" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
@@ -1378,7 +1414,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="270" Y="175" Width="210" Height="95"/>
+    <WindowState Visible="True" X="270" Y="375" Width="210" Height="95"/>
     <AllowChildren>True</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
@@ -1434,7 +1470,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="270" Y="380" Width="210" Height="95"/>
+    <WindowState Visible="True" X="270" Y="475" Width="210" Height="95"/>
     <AllowChildren>True</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
@@ -1486,14 +1522,14 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="5" Y="5" Width="260" Height="535"/>
+    <WindowState Visible="True" X="5" Y="5" Width="260" Height="565"/>
     <AllowChildren>True</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
     <ShowEnableButton>False</ShowEnableButton>
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
-    <Multipage PagesNum="8" CurrentPage="1"/>
+    <Multipage PagesNum="8" CurrentPage="0"/>
     <Shortcut Page="0" Name="Page: 1"/>
     <Shortcut Page="1" Name="Page: 2"/>
     <Shortcut Page="2" Name="Page: 3"/>
@@ -1504,7 +1540,7 @@
     <Shortcut Page="7" Name="Page: 8"/>
     <PagesLoop>True</PagesLoop>
     <Button Caption="Manual-PP: Turn on Rear Prj" ID="72" Icon="">
-     <WindowState Visible="False" X="5" Y="130" Width="250" Height="45"/>
+     <WindowState Visible="True" X="5" Y="130" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1517,7 +1553,7 @@
      <Intensity Adjust="False">100</Intensity>
     </Button>
     <Button Caption="Projectors: Turn on all 3 Front" ID="73" Icon="">
-     <WindowState Visible="False" X="5" Y="175" Width="250" Height="45"/>
+     <WindowState Visible="True" X="5" Y="175" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1530,7 +1566,7 @@
      <Intensity Adjust="False">100</Intensity>
     </Button>
     <Button Caption="Manual-Lx: Walk In" ID="74" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="85" Width="250" Height="45"/>
+     <WindowState Visible="False" X="5" Y="85" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1542,8 +1578,8 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Manual-PP: Start CDWU-0009 Loop" ID="75" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="130" Width="250" Height="45"/>
+    <Button Caption="Manual-PP: Start announce Loop" ID="75" Page="1" Icon="">
+     <WindowState Visible="False" X="5" Y="130" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1555,8 +1591,8 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Manual-Video: ATEM Aux from Mediashout" ID="76" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="175" Width="250" Height="50"/>
+    <Button Caption="Manual-Video: ATEM Aux from CDWU-0009" ID="76" Page="1" Icon="">
+     <WindowState Visible="False" X="5" Y="175" Width="250" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1568,8 +1604,8 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Lobby-Nursery from Aux" ID="77" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="225" Width="250" Height="50"/>
+    <Button Caption="Lobby-Nursery   from Aux" ID="77" Page="1" Icon="">
+     <WindowState Visible="False" X="5" Y="225" Width="250" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1672,20 +1708,7 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="9:20 am" ID="85" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="40" Width="250" Height="45"/>
-     <Appearance>
-      <FrameStyle>None</FrameStyle>
-      <ForegroundColor>4291611852</ForegroundColor>
-      <BackgroundColor>4278190208</BackgroundColor>
-      <BackgroundImage>None</BackgroundImage>
-      <Font>.SF NS Text,24,-1,5,50,0,0,0,0,0</Font>
-     </Appearance>
-     <Function ID="4294967295"/>
-     <Action>Toggle</Action>
-     <Intensity Adjust="False">100</Intensity>
-    </Button>
-    <Button Caption="8:15 am" ID="86" Icon="">
+    <Button Caption="9:40 am" ID="85" Page="1" Icon="">
      <WindowState Visible="False" X="5" Y="40" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
@@ -1698,8 +1721,21 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
+    <Button Caption="8:15 am" ID="86" Icon="">
+     <WindowState Visible="True" X="5" Y="40" Width="250" Height="45"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>4291611852</ForegroundColor>
+      <BackgroundColor>4278190208</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>.SF NS Text,24,-1,5,50,0,0,0,0,0</Font>
+     </Appearance>
+     <Function ID="4294967295"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
     <Button Caption="Manual-Audio: Music" ID="87" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="275" Width="250" Height="50"/>
+     <WindowState Visible="False" X="5" Y="275" Width="250" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -1828,19 +1864,6 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Manual-Lights: Swap Control Cables" ID="104" Icon="">
-     <WindowState Visible="False" X="5" Y="220" Width="250" Height="45"/>
-     <Appearance>
-      <FrameStyle>None</FrameStyle>
-      <ForegroundColor>Default</ForegroundColor>
-      <BackgroundColor>4284479739</BackgroundColor>
-      <BackgroundImage>None</BackgroundImage>
-      <Font>Default</Font>
-     </Appearance>
-     <Function ID="4294967295"/>
-     <Action>Toggle</Action>
-     <Intensity Adjust="False">100</Intensity>
-    </Button>
     <Button Caption="Manual-Lights: Swap Control Cables" ID="105" Page="7" Icon="">
      <WindowState Visible="False" X="5" Y="225" Width="250" Height="45"/>
      <Appearance>
@@ -1877,19 +1900,6 @@
       <Font>Default</Font>
      </Appearance>
      <Function ID="27"/>
-     <Action>Toggle</Action>
-     <Intensity Adjust="False">100</Intensity>
-    </Button>
-    <Button Caption="Manual-Video: (temporary) Reset fx4" ID="108" Icon="">
-     <WindowState Visible="False" X="5" Y="340" Width="250" Height="80"/>
-     <Appearance>
-      <FrameStyle>None</FrameStyle>
-      <ForegroundColor>Default</ForegroundColor>
-      <BackgroundColor>4284479739</BackgroundColor>
-      <BackgroundImage>None</BackgroundImage>
-      <Font>Default</Font>
-     </Appearance>
-     <Function ID="4294967295"/>
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
@@ -1998,7 +2008,7 @@
      <Intensity Adjust="False">100</Intensity>
     </Button>
     <Button Caption="Manual-Lights: Turn On House" ID="117" Icon="">
-     <WindowState Visible="False" X="5" Y="85" Width="250" Height="45"/>
+     <WindowState Visible="True" X="5" Y="85" Width="250" Height="45"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -2010,7 +2020,7 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Manual-Video: ATEM Aux from Mediashout" ID="118" Page="5" Icon="">
+    <Button Caption="Manual-Video: ATEM Aux from CDWU-0009" ID="118" Page="5" Icon="">
      <WindowState Visible="False" X="5" Y="235" Width="250" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
@@ -2023,16 +2033,6 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Label Caption="Note: at 9:55 the centre screen was switched to run from Aux. Now we switch the Aux to be CDWU-0009. This allows the centre screen to display the series graphic independent from PP." ID="119" Page="5">
-     <WindowState Visible="False" X="5" Y="290" Width="250" Height="180"/>
-     <Appearance>
-      <FrameStyle>None</FrameStyle>
-      <ForegroundColor>4294900265</ForegroundColor>
-      <BackgroundColor>Default</BackgroundColor>
-      <BackgroundImage>None</BackgroundImage>
-      <Font>.SF NS Text,18,-1,5,50,0,0,0,0,0</Font>
-     </Appearance>
-    </Label>
     <Button Caption="Manual-Video: ATEM Aux from PP" ID="120" Page="6" Icon="">
      <WindowState Visible="False" X="5" Y="185" Width="250" Height="50"/>
      <Appearance>
@@ -2046,16 +2046,55 @@
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
-    <Button Caption="Manual-Video: Start Livestream" ID="5" Page="1" Icon="">
-     <WindowState Visible="True" X="5" Y="325" Width="250" Height="50"/>
+    <Button Caption="Rear From PP StageDisplay" ID="12" Page="2" Icon="">
+     <WindowState Visible="False" X="5" Y="405" Width="250" Height="50"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
-      <BackgroundColor>4284479739</BackgroundColor>
+      <BackgroundColor>4294902015</BackgroundColor>
       <BackgroundImage>None</BackgroundImage>
       <Font>Default</Font>
      </Appearance>
-     <Function ID="4294967295"/>
+     <Function ID="3"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="Rear from Windows - Prezi" ID="20" Page="5" Icon="">
+     <WindowState Visible="False" X="5" Y="285" Width="250" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>4294902015</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="2"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="Rear from PP Stagedisplay" ID="21" Page="6" Icon="">
+     <WindowState Visible="False" X="5" Y="235" Width="250" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>4294902015</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="3"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="Rear from PP StageDisplay" ID="22" Icon="">
+     <WindowState Visible="True" X="5" Y="220" Width="250" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>4294902015</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="3"/>
      <Action>Toggle</Action>
      <Intensity Adjust="False">100</Intensity>
     </Button>
@@ -2068,13 +2107,13 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="270" Y="275" Width="210" Height="100"/>
+    <WindowState Visible="True" X="600" Y="540" Width="200" Height="40"/>
     <AllowChildren>True</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
     <ShowEnableButton>False</ShowEnableButton>
     <Mixing>False</Mixing>
-    <Collapsed>False</Collapsed>
+    <Collapsed>True</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="PP" ID="127" Icon="">
      <WindowState Visible="True" X="5" Y="45" Width="50" Height="50"/>
@@ -2137,13 +2176,13 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="270" Y="480" Width="210" Height="150"/>
+    <WindowState Visible="True" X="600" Y="580" Width="200" Height="40"/>
     <AllowChildren>True</AllowChildren>
     <AllowResize>True</AllowResize>
     <ShowHeader>True</ShowHeader>
     <ShowEnableButton>False</ShowEnableButton>
     <Mixing>False</Mixing>
-    <Collapsed>False</Collapsed>
+    <Collapsed>True</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Black" ID="142" Icon="">
      <WindowState Visible="True" X="5" Y="45" Width="50" Height="50"/>
@@ -2211,16 +2250,102 @@
      <Intensity Adjust="False">100</Intensity>
     </Button>
    </SoloFrame>
-   <Label Caption="Cue      Commander" ID="148">
-    <WindowState Visible="True" X="480" Y="5" Width="285" Height="105"/>
+   <Label Caption="CueCommander" ID="148">
+    <WindowState Visible="True" X="480" Y="5" Width="280" Height="65"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>4294900265</ForegroundColor>
      <BackgroundColor>Default</BackgroundColor>
      <BackgroundImage>None</BackgroundImage>
-     <Font>MS Shell Dlg 2,34,-1,5,50,0,0,0,0,0</Font>
+     <Font>MS Shell Dlg 2,20,-1,5,50,0,0,0,0,0</Font>
     </Appearance>
    </Label>
+   <SoloFrame Caption="Matrix AC Screen Source" ID="8">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Visible="True" X="270" Y="175" Width="210" Height="95"/>
+    <AllowChildren>True</AllowChildren>
+    <AllowResize>True</AllowResize>
+    <ShowHeader>True</ShowHeader>
+    <ShowEnableButton>False</ShowEnableButton>
+    <Mixing>False</Mixing>
+    <Collapsed>False</Collapsed>
+    <Disabled>False</Disabled>
+    <Button Caption="CDWU 0009" ID="6" Icon="">
+     <WindowState Visible="True" X="55" Y="40" Width="50" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="0"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="CDMU A001" ID="7" Icon="">
+     <WindowState Visible="True" X="5" Y="40" Width="50" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="1"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+   </SoloFrame>
+   <SoloFrame Caption="Matrix Rear" ID="5">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Visible="True" X="270" Y="275" Width="210" Height="95"/>
+    <AllowChildren>True</AllowChildren>
+    <AllowResize>True</AllowResize>
+    <ShowHeader>True</ShowHeader>
+    <ShowEnableButton>False</ShowEnableButton>
+    <Mixing>False</Mixing>
+    <Collapsed>False</Collapsed>
+    <Disabled>False</Disabled>
+    <Button Caption="CDMU A001" ID="10" Icon="">
+     <WindowState Visible="True" X="5" Y="40" Width="50" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="3"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+    <Button Caption="CDWU 0009" ID="11" Icon="">
+     <WindowState Visible="True" X="55" Y="40" Width="50" Height="50"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="2"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+    </Button>
+   </SoloFrame>
   </Frame>
   <Properties>
    <Size Width="1920" Height="1080"/>
