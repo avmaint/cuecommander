@@ -16,7 +16,7 @@ Kramer Outputs
 # 1 projector East
 # 2 projector centre
 # 3 projector west
-# 4 cofidence (rear)
+# 4 confidence (rear)
 # 5 ?
 # 6 ATEM
 # 7 Lobby
@@ -25,6 +25,7 @@ Kramer Outputs
 """
 from Config import config
 import socket
+from UI import build_ui
 
 kramer_cmds = {
     'bdate'     : "#BUILD-DATE?\r\n",
@@ -50,34 +51,49 @@ def kramer_send_command(cmd ):
     BUFFER_SIZE = 1024
     data=""
 
+    build_ui.logmsg("I", 'Sending command %s:' % (cmd))
+
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(5)
+        sock.settimeout(3)
 
         try:
             sock.connect((config.vs88dt["ip"], config.vs88dt["port"]))
         except Exception as e:
-            print('Exception on connect:', format(e))
+            build_ui.logmsg("E",  'Exception on kramer connect:' + format(e)   )
 
         data = sock.recv(BUFFER_SIZE).decode()
-        print('Welcome %s' % repr(data))
-
-        #for cmd_name in cmd_list:
-        #msg = cmd
+        build_ui.logmsg("I", 'Welcome %s' % repr(data))
 
         b = bytes(cmd, 'utf-8')
         sock.send(b)
 
-        # print ('Sent:', cmd )
         data = sock.recv(BUFFER_SIZE).decode()
-        print('Sent: %s, Received %s' % (cmd, repr(data)))
+        build_ui.logmsg("I",'Sent: %s' % (cmd ))
+        build_ui.logmsg("I",'Received: %s' % (repr(data)))
 
     except Exception as e:
-        print('Exception:', format(e))
+        build_ui.logmsg("E", 'Exception:'+ format(e))
 
     sock.close()
 
     return(repr(data))
+
+def kramer_in_out(innum, outnum):
+
+    assert (innum > 0 and innum < 9), "innum selection out of bounds"
+    assert (outnum > 0 and outnum < 9), "outnum selection out of bounds"
+
+    cmd = "#VID in>out|VID %d>%d\r\n" % (innum, outnum)
+
+    try:
+        result = kramer_send_command(cmd)
+        status = "ok"
+    except Exception as e:
+        result = ["Failed:" + e.strerror]
+        status = "exception"
+
+    return status
 
 
 def action_util(action, cmd):
